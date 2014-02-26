@@ -15,7 +15,7 @@ Meteor.methods(
 				active: true
 				startTime: new Date()
 		)
-	triggerCommercial: (cableProvider) ->
+	triggerCommercial: (cableProvider, geoloc) ->
 		activeId = Commercials.findOne({active: true})._id
 		foo = headers.get( this )
 		console.log ( foo )
@@ -23,6 +23,7 @@ Meteor.methods(
 			time: new Date()
 			headers: foo
 			cableProvider: cableProvider
+			geoloc: geoloc
 		Commercials.update( activeId,
 			$push:
 				responses: data

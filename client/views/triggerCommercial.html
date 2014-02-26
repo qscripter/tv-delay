@@ -1,11 +1,27 @@
 <template name="triggerCommercial">
-	<select id="cableProvider">
-		<option>ATT U-Verse</option>
-		<option>Verizon FiOS</option>
-		<option>DirecTV</option>
-		<option>Dish</option>
-		<option>Comcast</option>
-		<option>Time Warner</option>
-	</select>
-	<button type="button" class="btn btn-large btn-primary">Trigger Commercial</button>
+	<div class="row">
+		<div class="col-md-12">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label for="cable-select">Select Cable Provider</label>
+					<select id="cableProvider" class="form-control input-lg">
+						<option></option>
+						<option>Off Air</option>
+						<option>ATT U-Verse</option>
+						<option>Verizon FiOS</option>
+						<option>DirecTV</option>
+						<option>Dish</option>
+						<option>Comcast</option>
+						<option>Time Warner</option>
+					</select>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h3>Press this button when you see a commercial break occur:</h3>
+			<button type="button" class="btn btn-lg btn-primary">Commercial Break</button>
+		</div>
+	</div>
 </template>
