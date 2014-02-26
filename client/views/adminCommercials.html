@@ -1,0 +1,13 @@
+<template name="adminCommercials">
+	{{#each commercials }}
+		<h3>{{ name }}</h3>
+		Active: {{ active }} <br>
+		Start Time: {{ startTime }} <br>
+		<ul>
+			{{#each responses}}
+				<li>{{ timeDiff .. }}s ({{ cableProvider }})</li>
+			{{/each }}
+		</ul>
+		<button type="button" class="btn btn-primary" id="{{ _id }}">Set Active</button><br>
+	{{/each }}
+</template>

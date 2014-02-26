@@ -1,0 +1,1 @@
+@Commercials = new Meteor.Collection("commercials")
