@@ -17,15 +17,25 @@ Meteor.methods(
 		)
 	triggerCommercial: (cableProvider, geoloc) ->
 		activeId = Commercials.findOne({active: true})._id
-		foo = headers.get( this )
-		console.log ( foo )
+		headerInfo = headers.get( this )
 		data =
 			time: new Date()
-			headers: foo
+			headers: headerInfo
 			cableProvider: cableProvider
 			geoloc: geoloc
-		Commercials.update( activeId,
-			$push:
-				responses: data
-		)
+		if headerInfo['x-forwarded-for']
+			url = "http://ip-api.com/json/" + headerInfo['x-forwarded-for']
+			HTTP.get( url, (err, response) =>
+				if not err
+					data.ipGeoloc = JSON.parse(response.content)
+				Commercials.update( activeId,
+					$push:
+						responses: data
+				)
+			)
+		else
+			Commercials.update( activeId,
+				$push:
+					responses: data
+			)
 )

@@ -1,8 +1,8 @@
 Template.adminCommercials.commercials = () ->
-	return Commercials.find()
+	return Commercials.find({}, {sort: {name: 1}})
 
 Template.adminCommercials.timeDiff = (parent) ->
-	return (this.time - parent.startTime) / 1000
+	return Math.round((this.time - parent.startTime) / 1000)
 
 Template.adminCommercials.events(
 	'click button': ->
