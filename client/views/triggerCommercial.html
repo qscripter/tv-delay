@@ -1,26 +1,20 @@
 <template name="triggerCommercial">
 	<div class="row">
 		<div class="col-md-12">
-			<form class="form-horizontal">
-				<div class="form-group">
-					<label for="cable-select">Select Cable Provider</label>
-					<select id="cableProvider" class="form-control input-lg">
-						<option></option>
-						<option>Off Air</option>
-						<option>ATT U-Verse</option>
-						<option>Verizon FiOS</option>
-						<option>DirecTV</option>
-						<option>Dish</option>
-						<option>Comcast</option>
-						<option>Time Warner</option>
-					</select>
-				</div>
-			</form>
+			<h4>Select Your Cable Provider:</h4>
+			<select id="cableProvider" class="form-control input-lg">
+				<option></option>
+				{{# each cableProviders }}
+				<option>{{ name }}</option>
+				{{/each }}
+				<option>Other</option>
+			</select>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<h3>Press this button when you see a commercial break occur:</h3>
+			<h3>Press this button as soon as a commercial break occurs</h3>
+			<p>Please press it only one time as soon as the show transitions into a commercial break</p>
 			<button type="button" class="btn btn-lg btn-primary">Commercial Break</button>
 		</div>
 	</div>

@@ -28,7 +28,6 @@ Meteor.startup(function () {
   if ("geolocation" in navigator) {
     /* geolocation is available */
     navigator.geolocation.getCurrentPosition(function(position) {
-      console.log( position )
       Session.set("geolocation", position)
     });
   } else {
