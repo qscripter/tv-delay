@@ -17,7 +17,9 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li><a href="/">Home</a></li>
+          {{#if isInRole 'admin' }}<li><a href="/admin">Admin</a></li>{{/if }}
           <li><a href="/contact">Contact</a></li>
+          <li class="accounts-wrapper">{{ loginButtons }}</li>
         </ul>
         <h3 class="text-muted">TV Delay Measure</h3>
       </div>

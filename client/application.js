@@ -1,3 +1,6 @@
+Meteor.subscribe("cableProviders");
+Meteor.subscribe("commercials");
+
 Router.configure({
   layoutTemplate: 'main'
  })

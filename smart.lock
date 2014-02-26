@@ -5,7 +5,8 @@
       "iron-router": {},
       "bootstrap-3": {},
       "npm": {},
-      "headers": {}
+      "headers": {},
+      "roles": {}
     },
     "packages": {
       "iron-router": {
@@ -27,6 +28,11 @@
         "git": "https://github.com/gadicohen/meteor-headers.git",
         "tag": "v0.0.15",
         "commit": "0852ea4df6b1314914c4355160d0b0fd61675aea"
+      },
+      "roles": {
+        "git": "https://github.com/alanning/meteor-roles.git",
+        "tag": "v1.2.6",
+        "commit": "f2a9058281f8f2fe028767841d7445aadd6893cf"
       }
     }
   }
