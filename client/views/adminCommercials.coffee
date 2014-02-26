@@ -5,6 +5,8 @@ Template.adminCommercials.timeDiff = (parent) ->
 	return Math.round((this.time - parent.startTime) / 1000)
 
 Template.adminCommercials.events(
-	'click button': ->
+	'click .start': ->
 		Meteor.call( 'startCommercial', this._id )
+	'click .delete': ->
+		Meteor.call( 'deleteCommercial', this._id )
 )

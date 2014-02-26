@@ -1,20 +1,23 @@
 Meteor.methods(
 	headers: () ->
 		foo = headers.get( this )
-		console.log( foo )
 		return foo
 	startCommercial: (_id) ->
-		Commercials.update({},
-			$set:
-				active: false
-		,
-			multi: true
-		)
-		Commercials.update(_id,
-			$set:
-				active: true
-				startTime: new Date()
-		)
+		if Roles.userIsInRole(this.userId, ['admin'])
+			Commercials.update({},
+				$set:
+					active: false
+			,
+				multi: true
+			)
+			Commercials.update(_id,
+				$set:
+					active: true
+					startTime: new Date()
+			)
+	deleteCommercial: (_id) ->
+		if Roles.userIsInRole(this.userId, ['admin'])
+			Commercials.update(_id, {$set: {deleted: true}})
 	triggerCommercial: (cableProvider, geoloc) ->
 		activeId = Commercials.findOne({active: true})._id
 		headerInfo = headers.get( this )

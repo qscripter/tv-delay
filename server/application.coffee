@@ -33,5 +33,6 @@ Meteor.startup( () ->
 
 
 	qscripter = Meteor.users.findOne({"emails.0.address": "qscripter@gmail.com"})
-	Roles.addUsersToRoles(qscripter._id, ['admin'])
+	if qscripter
+		Roles.addUsersToRoles(qscripter._id, ['admin'])
 )

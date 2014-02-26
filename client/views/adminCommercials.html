@@ -3,7 +3,9 @@
 		<h3>{{ name }}</h3>
 		Active: {{ active }} <br>
 		Start Time: {{ startTime }} <br>
-		<button type="button" class="btn btn-primary" id="{{ _id }}">Set Active</button><br>
+		<button type="button" class="btn btn-primary start" id="start_{{ _id }}">Set Active</button>
+		<button type="button" class="btn btn-danger delete" id="delete_{{ _id }}">Delete</button>
+		<br>
 		<table class="table table-striped">
 			<thead>
 				<tr>
