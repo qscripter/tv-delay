@@ -22,6 +22,10 @@ Router.map(function () {
     path: '/headers',
     template: 'headers'
   });
+
+  this.route('contact', {
+    path: '/contact'
+  });
 });
 
 Meteor.startup(function () {
