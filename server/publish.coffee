@@ -14,6 +14,8 @@ CableProviders.allow(
 Meteor.publish("commercials", () ->
 	if Roles.userIsInRole(this.userId, ['admin'])
 		return Commercials.find({deleted: {$exists: false}})
+	else
+		return Commercials.find({active: true}, {fields: {responses: 0}})
 )
 
 Commercials.allow(
