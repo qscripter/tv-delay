@@ -28,7 +28,7 @@ Meteor.methods(
 			geoloc: geoloc
 		if headerInfo['x-forwarded-for']
 			hosts = headerInfo['x-forwarded-for'].split(",")
-			url = "http://ip-api.com/json/" + hosts[hosts.length - 1]
+			url = "http://ip-api.com/json/" + hosts[hosts.length - 2]
 			HTTP.get( url, (err, response) =>
 				if not err
 					data.ipGeoloc = JSON.parse(response.content)

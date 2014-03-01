@@ -12,20 +12,28 @@
   <body>
 
     
+    <div id="wrap">
+      <div class="container">
+        <div class="header">
+          <ul class="nav nav-pills pull-right">
+            {{#if isInRole 'admin' }}
+            <li><a href="/">Home</a></li>
+            <li><a href="/admin">Admin</a></li>
+            {{/if }}
+            <li class="accounts-wrapper">{{ loginButtons }}</li>
+          </ul>
+          <h3 class="text-muted">TV Delay Measure</h3>
+        </div>
 
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="/">Home</a></li>
-          {{#if isInRole 'admin' }}<li><a href="/admin">Admin</a></li>{{/if }}
-          <li><a href="/contact">Contact</a></li>
-          <li class="accounts-wrapper">{{ loginButtons }}</li>
-        </ul>
-        <h3 class="text-muted">TV Delay Measure</h3>
+        {{ yield }}
+
+      </div><!-- /.container -->
+    </div>
+
+    <div id="footer">
+      <div class="container text-center">
+        <p>Made by <a href="https://twitter.com/qscripter">@qscripter</a></p>
       </div>
-
-      {{ yield }}
-
-    </div><!-- /.container -->
+    </div>
   </body>
 </template>
